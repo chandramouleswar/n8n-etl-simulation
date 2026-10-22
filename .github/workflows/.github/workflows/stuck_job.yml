@@ -1,0 +1,14 @@
+name: "ETL - Large Export (Simulated Long Run)"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Processing Rows
+        run: |
+          echo "Beginning huge data export..."
+          sleep 720 # Keeps the job RUNNING for exactly 12 minutes
+          echo "Done!"
