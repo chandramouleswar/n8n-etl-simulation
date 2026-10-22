@@ -1,0 +1,16 @@
+name: "ETL - Nightly Sync (Simulated Failure)"
+
+on:
+  workflow_dispatch: # This lets you trigger it manually with a button click!
+
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching Data
+        run: echo "Fetching data from source..."
+        
+      - name: Simulating Database Crash
+        run: |
+          echo "Error: Connection lost to target warehouse!"
+          exit 1 # This forces the workflow to FAIL
